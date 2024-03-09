@@ -1,9 +1,9 @@
 export default function createEmployeesObject(departmentName, employees) {
-  const department = {}
-  const employee_list = []
-  for (const name of employees){
-   employee_list.push(name); 
+  const department = {};
+  const employeeList = [];
+  for (const name of employees) {
+    employeeList.push(name);
   }
-   department[departmentName] = employee_list;
-   return department;
+  department[departmentName] = employeeList;
+  return department;
 }
