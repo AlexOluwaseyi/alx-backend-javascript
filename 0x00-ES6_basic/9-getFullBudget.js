@@ -6,9 +6,9 @@ export default function getFullBudgetObject(income, gdp, capita) {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
     // eslint-disable-next-line no-unused-vars
-    getIncomeInDollars: (budget) => `$${income}`,
+    getIncomeInDollars: (income) => `$${budget.income}`,
     // eslint-disable-next-line no-unused-vars
-    getIncomeInEuros: (budget) => `${income} euros`,
+    getIncomeInEuros: (income) => `${budget.income} euros`,
   };
 
   return fullBudget;
