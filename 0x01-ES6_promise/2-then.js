@@ -9,8 +9,8 @@ export default function handleResponseFromAPI(promise) {
   });
 }
 
-const promise = true;
-handleResponseFromAPI(promise)
+// const promise = true;
+handleResponseFromAPI()
   .then((result) => {
     console.log("Got a response from the API");
   })
