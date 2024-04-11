@@ -4,7 +4,7 @@ export default function handleResponseFromAPI(promise) {
   // eslint-disable-next-line no-unused-vars
     .then((data) => ({ status: 200, body: 'success' }))
   // eslint-disable-next-line no-unused-vars
-    .catch((error) => ({}))
+    .catch((error) => new Error(''))
     .finally(() => {
       console.log('Got a response from the API');
     });
