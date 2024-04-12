@@ -2,12 +2,14 @@ import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  return Promise.all([signUpUser(firstName, lastName), uploadPhoto(fileName)])
-    .then(([photoResult, userResult]) => {
-      console.log(`${photoResult.body} ${userResult.firstName} ${userResult.lastName}`);
-    })
-  // eslint-disable-next-line no-unused-vars
-    .catch((error) => {
-      console.log('Signup system offline');
+  const signUpPromise = signUpUser(firstName, lastName);
+  const uploadPhotoPromise = uploadPhoto(fileName);
+
+  return Promise.allSettled([signUpPromise, uploadPhotoPromise])
+    .then(results => {
+      return results.map(result => ({
+        status: result.status,
+        value: result.status === 'fulfilled' ? result.value : result.reason
+      }));
     });
 }
