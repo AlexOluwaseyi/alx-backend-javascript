@@ -7,6 +7,6 @@ export default function handleProfileSignup() {
     })
   // eslint-disable-next-line no-unused-vars
     .catch((error) => {
-      console.error('Signup system offline');
+      console.log('Signup system offline');
     });
 }
