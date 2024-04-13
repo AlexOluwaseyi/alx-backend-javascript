@@ -6,8 +6,8 @@ export default class Building {
     } else {
       throw new TypeError('SQFT must be a number');
     }
-    if (this.constructor.name !== 'Building'){
-      if (this.evacuationWarningMessage !== 'function') {
+    if (this.constructor.name !== 'Building') {
+      if (!Object.prototype.hasOwnProperty.call(this.constructor.prototype, 'evacuationWarningMessage')) {
         throw new Error('Class extending Building must override evacuationWarningMessage');
       }
     }
