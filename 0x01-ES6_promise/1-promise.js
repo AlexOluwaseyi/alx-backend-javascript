@@ -9,7 +9,7 @@ export default function getFullResponseFromAPI(success) {
   });
 }
 
-const success = false; 
+const success = false;
 getFullResponseFromAPI(success)
   .then((result) => {
     console.log(result);
