@@ -1,3 +1,5 @@
+// export{};
+
 interface Student {
   firstName: string;
   lastName: string;
@@ -5,20 +7,21 @@ interface Student {
   location: string;
 }
 
-const student1: Student{
-  firstName: "John",
-  lastName: "Doe",
-  age: 28,
-  location: "San Francisco",
-};
-const student2: Student{
+const firstStudent: Student = {
   firstName: "John",
   lastName: "Doe",
   age: 28,
   location: "San Francisco",
 };
 
-let studentsList: Studnet[] = [student1, student2];
+const secondStudent: Student = {
+  firstName: "Jane",
+  lastName: "Doe",
+  age: 25,
+  location: "San Jose",
+};
+
+let studentsList: Student[] = [firstStudent, secondStudent];
 
 function renderTable(students: Student[]) {
   const table = document.createElement("table");
