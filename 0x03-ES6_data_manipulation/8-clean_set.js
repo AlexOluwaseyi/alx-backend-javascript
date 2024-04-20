@@ -1,8 +1,7 @@
 export default function cleanSet(set, startString) {
-  if (startString.length === 0)
-    return ''
+  if (startString.length === 0) return '';
   let str = '';
-  const arr =  Array.from(set);
+  const arr = Array.from(set);
   for (const value of arr) {
     if (value.startsWith(startString)) {
       const temp = value.split(startString);
