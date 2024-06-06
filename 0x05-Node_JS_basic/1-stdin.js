@@ -3,7 +3,7 @@ function stdin() {
   process.stdin.on('data', (data) => {
     console.log(`Your name is: ${data.toString().trim()}`);
     console.log('This important software is now closing');
-    process.exit();
+    // process.exit();
   });
 }
 
