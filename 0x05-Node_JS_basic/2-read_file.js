@@ -3,10 +3,9 @@ const fs = require('fs');
 
 fs.readFile('database.csv', (err, data) => {
   if (err) {
-    console.error('Cannot load the database');
-    throw (err);
+    throw new Error('Cannot load the database');
   }
-  const lines = data.toString().split('\n'); // Split the file content by newline characters
+  const lines = data.toString().split('\n');
   const lineCount = lines.length - 1;
   console.log(`Number of students: ${lineCount}`);
 
