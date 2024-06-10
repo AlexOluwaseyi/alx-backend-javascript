@@ -1,13 +1,14 @@
 // const readline = require('readline');
 const fs = require('fs');
 
-fs.readFile('database.csv', (err, data) => {
+function countStudents(path) {
+  fs.readFile(path, (err, data) => {
   if (err) {
     throw new Error('Cannot load the database');
   }
   const lines = data.toString().split('\n');
   const lineCount = lines.length - 1;
-  console.log(`Number of students: ${lineCount}`);
+  console.log(`Numbers of students: ${lineCount}`);
 
   const studentsByField = {};
   for (let i = 1; i < lines.length; i += 1) {
@@ -26,3 +27,6 @@ fs.readFile('database.csv', (err, data) => {
     console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
   }
 });
+}
+
+module.exports = countStudents;
